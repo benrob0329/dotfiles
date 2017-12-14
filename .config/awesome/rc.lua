@@ -345,7 +345,7 @@ globalkeys = gears.table.join(
 			  {description = "lua execute prompt", group = "awesome"}),
 
 	-- Menubar
-	awful.key({modkey}, "r", function() menubar.show() end,
+	awful.key({modkey}, "p", function() menubar.show() end,
 			  {description = "show the menubar", group = "launcher"})
 )
 
