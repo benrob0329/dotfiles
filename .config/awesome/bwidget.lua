@@ -4,6 +4,9 @@ local naughty = require("naughty")
 
 local battw = wibox.widget.textbox()
 
+if require("hostname") == "benrob0329-laptop" then
+	return battw end
+
 local battstat = function()
 	local f = assert(io.popen("acpi", 'r'))
 	local s = assert(f:read('*a'))

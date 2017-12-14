@@ -3,6 +3,9 @@ local wibox = require("wibox")
 
 local awidget = wibox.widget.textbox()
 
+if require("hostname") == "benrob0329-laptop" then
+	return battw end
+
 local astat = function()
 	local f = assert(io.popen("amixer sget Master"))
 	local s = assert(f:read("*a"))
