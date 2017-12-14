@@ -4,7 +4,7 @@ local naughty = require("naughty")
 
 local battw = wibox.widget.textbox()
 
-if require("hostname") == "benrob0329-laptop" then
+if require("hostname") ~= "benrob0329-laptop" then
 	return battw end
 
 local battstat = function()

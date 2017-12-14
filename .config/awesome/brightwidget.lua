@@ -3,8 +3,8 @@ local wibox = require("wibox")
 
 local brightw = wibox.widget.textbox()
 
-if require("hostname") == "benrob0329-laptop" then
-	return battw end
+if require("hostname") ~= "benrob0329-laptop" then
+	return brightw end
 
 local brightstat = function()
 	local f = assert(io.popen("xbacklight", "r"))
