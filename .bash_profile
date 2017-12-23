@@ -3,4 +3,5 @@
 # Get the aliases and functions
 [ -f $HOME/.bashrc ] && . $HOME/.bashrc
 
-EDITOR='/bin/vim'
+export EDITOR='/bin/vim'
+export QT_QPA_PLATFORMTHEME=qt5ct
