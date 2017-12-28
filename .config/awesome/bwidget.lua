@@ -4,9 +4,6 @@ local naughty = require("naughty")
 
 local battw = wibox.widget.textbox()
 
-if require("hostname") ~= "benrob0329-laptop" then
-	return battw end
-
 local function status()
 	local f = assert(io.popen("acpi", 'r'))
 	local s = assert(f:read('*a'))
@@ -14,7 +11,11 @@ local function status()
 
 	local state, charge = s:match("Battery 0: (.*), (%d+)%%")
 
-	charge = tonumber(charge)
+	if charge and state then
+		charge = tonumber(charge)
+	else
+		return false
+	end
 
 	if state == "Charging" then
 		if battw.text:match("") then
@@ -44,7 +45,12 @@ end
 
 local mytimer = timer({timeout=1})
 mytimer:connect_signal("timeout", function()
-	battw.text = " " .. status() .. " "
+	local text = status()
+	if text then
+		battw.text = " " .. status() .. " "
+	else
+		battw.text = ""
+	end
 end)
 
 mytimer:start()
