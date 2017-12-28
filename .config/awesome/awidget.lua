@@ -6,7 +6,7 @@ local awidget = wibox.widget.textbox()
 if require("hostname") ~= "benrob0329-laptop" then
 	return awidget end
 
-local astat = function()
+local status = function()
 	local f = assert(io.popen("amixer sget Master"))
 	local s = assert(f:read("*a"))
 	f:close()
@@ -27,11 +27,9 @@ local astat = function()
 	end
 end
 
-awidget.text = " " .. astat() .. " "
-
 local mytimer = timer({timeout=1})
 mytimer:connect_signal("timeout", function()
-	awidget.text = " " .. astat() .. " "
+	awidget.text = " " .. status() .. " "
 end)
 
 mytimer:start()

@@ -107,6 +107,7 @@ mytextclock = wibox.widget.textclock(" %a %b %d, %I:%M %p ")
 mybwidget = require("bwidget")
 myawidget = require("awidget")
 mybrightwidget = require("brightwidget")
+mywebwidget = require("webwidget")
 
 
 -- Create a wibox for each screen and add it
@@ -206,6 +207,7 @@ awful.screen.connect_for_each_screen(function(s)
 			layout = wibox.layout.fixed.horizontal,
 			mykeyboardlayout,
 			wibox.widget.systray(),
+			mywebwidget,
 			mybrightwidget,
 			myawidget,
 			mybwidget,
