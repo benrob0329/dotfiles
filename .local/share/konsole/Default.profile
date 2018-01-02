@@ -1,6 +1,6 @@
 [Appearance]
 ColorScheme=WhiteOnBlack
-Font=Inconsolata,14,-1,5,57,0,0,0,0,0,Medium
+Font=Noto Mono,13,-1,5,50,0,0,0,0,0,Regular
 
 [General]
 LocalTabTitleFormat=%d : %n

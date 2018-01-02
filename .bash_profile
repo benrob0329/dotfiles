@@ -5,3 +5,4 @@
 
 export EDITOR='/bin/vim'
 export QT_QPA_PLATFORMTHEME=qt5ct
+export PATH="$PATH:/home/benrob0329/bin/"
