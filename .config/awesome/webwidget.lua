@@ -3,6 +3,10 @@ local wibox = require("wibox")
 
 local webwidget = wibox.widget.textbox()
 
+if require("hostname") ~= "benrob0329-laptop" then
+	return webwidget
+end
+
 local function status()
 	local f = assert(io.popen("iw wlo1 link", 'r'))
 	local s = assert(f:read("*a"))
