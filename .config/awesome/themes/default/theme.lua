@@ -11,7 +11,7 @@ local themes_path = "/home/benrob0329/.config/awesome/themes/"
 
 local theme = {}
 
-theme.font          = "Inconsolata 12"
+theme.font          = "Noto Mono 10"
 
 theme.bg_normal     = "#000000"
 theme.bg_focus      = "#1B1B1B"
